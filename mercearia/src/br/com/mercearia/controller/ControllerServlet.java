@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import br.com.mercearia.logic.Logic;
 
 public class ControllerServlet extends HttpServlet {
+	
 	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
@@ -24,7 +25,7 @@ public class ControllerServlet extends HttpServlet {
 		String nomeDaClasse = "br.com.mercearia.logic." + parametro;
 		if (parametro != null) {
 			try {
-				Class classe = Class.forName(nomeDaClasse);
+				Class<?> classe = Class.forName(nomeDaClasse);
 				Logic logica = (Logic) classe.newInstance();
 				logica.executa(request, response);
 			} catch (Exception e) {
@@ -34,9 +35,11 @@ public class ControllerServlet extends HttpServlet {
 
 		} else {
 			System.out.println("Redirecionando para Nova compra...");
-			response.sendRedirect("/views/NovaCompra.jsp"); //teste de redirecionamento
-
-
+//			response.sendRedirect("views/NovaCompra.jsp"); //teste de redirecionamento
+			request.getRequestDispatcher("/views/NovaCompra.jsp").forward(request,
+					response);
+			
+			
 		}
 	}
 }

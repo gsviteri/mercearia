@@ -24,7 +24,7 @@ public class LoginController extends HttpServlet{
 			session.setAttribute("usuario", usuario);
 			//request.setAttribute("logic", "menu");
 			System.out.println("Mandando para o menu...");
-			response.sendRedirect("/views/Menu.jsp");
+			response.sendRedirect("views/Menu.jsp");
 			return;
 		}
 		else{
