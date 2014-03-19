@@ -1,17 +1,15 @@
 <html>
 <head>
-<title>Menu principal</title>
+<title>¨$%67¨%4657689-Menu principal</title>
 </head>
 <body>
-<h2>Menu</h2><br />
+<h2>Menu687409354</h2><br />
 Clientes<br />
-
-## AQUI NAO PRECISA DO /views/ POIS AS PAGINAS JA ESTAO NO MESMO NIVEL DO MENU.JSP
 <a href="NovoCliente.jsp">Novo cliente</a> <br />
 <a href="ProcurarCLiente.jsp">Procurar cliente</a> <br />
 Compra<br />
 <a href="NovaCompra.jsp">Nova compra</a><br />
-<a href="ProcuraCompra.jsp">Procurar compra</a><br />
+<a href="ProcurarCompra.jsp">Procurar compra</a><br />
 Produtos<br />
 <a href="NovoProduto.jsp">Novo produto</a><br />
 <a href="ProcurarProduto.jsp">Procurar produto</a><br />

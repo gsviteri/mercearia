@@ -18,7 +18,7 @@ public class LoginController extends HttpServlet{
 		String senha = request.getParameter("senha");
 		System.out.println(usuario + senha);
 		FuncionarioDAO dao = new FuncionarioDAO();
-
+		System.out.println(usuario);
 		if (dao.checaLogin(usuario, senha)){
 			HttpSession session = request.getSession();
 			session.setAttribute("usuario", usuario);
@@ -29,13 +29,8 @@ public class LoginController extends HttpServlet{
 		}
 		else{
 			System.out.println("Errado");
-			request.getRequestDispatcher("/SenhaInvalida.jsp").forward(request, response); 
+			request.getRequestDispatcher("/BemVindo.jsp").forward(request, response); 
 		}
 	}
-	public int getMenu() {
-		return Menu;
-	}
-	public void setMenu(int menu) {
-		Menu = menu;
-	}
 }
+
