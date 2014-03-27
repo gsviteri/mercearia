@@ -3,7 +3,7 @@
 <title>¨$%67¨%4657689-Menu principal</title>
 </head>
 <body>
-<h2>Menu687409354</h2><br />
+<h2>Menu</h2><br />
 Clientes<br />
 <a href="NovoCliente.jsp">Novo cliente</a> <br />
 <a href="ProcurarCLiente.jsp">Procurar cliente</a> <br />

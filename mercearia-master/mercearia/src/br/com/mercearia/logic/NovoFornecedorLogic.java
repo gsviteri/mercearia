@@ -38,7 +38,7 @@ public class NovoFornecedorLogic implements Logic {
 		FornecedorDAO dao = new FornecedorDAO();
 		dao.adiciona(fornecedor);
 		RequestDispatcher rd = request
-				.getRequestDispatcher("views/NovoFornecedor.jsp");
+				.getRequestDispatcher("NovoFornecedor.jsp");
 		rd.forward(request, response);
 	}
 }
