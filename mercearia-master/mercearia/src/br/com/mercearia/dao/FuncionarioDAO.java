@@ -19,7 +19,7 @@ public class FuncionarioDAO {
 	PreparedStatement ps;
 	private Connection connection;
 
-	public void adiciona(Cliente cliente) {
+	public void adiciona(Cliente cliente) { //Ta errado aqui!!!!
 		connection = new Conexao().getConnection();
 
 		sql = "insert into cliente "

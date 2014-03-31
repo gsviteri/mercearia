@@ -9,7 +9,7 @@
   <tr>
     <th>
 Funcionário: ##NOME_FUNCIONARIO<br />
-Cliente: <select value="  ...  "> <input type="button" value="Trocar"><br />
+Cliente: <select value="  ...  "> <br />
 Alerta de erro.</th>
     <th>
 <h3>Total: <br>
@@ -28,16 +28,35 @@ Troco:</th>
     <th>Opções</th>
   </tr>
   <tr>
-    <td><input type="text" size ="11"></td>
-    <td><input type="text" size="120" name="produproduto"></td>
+    <td><input type="text" size ="16" name ="codigo1"></td>
+    <td><input type="text" size="120"></td>
     <td><input type="text" size ="2" readonly></td>
-    <td><input type="text" size ="2" name="qtd"></td>
+    <td><input type="text" size ="2" name="qtd1"></td>
     <td><input type="text" size ="1" readonly></td>
     <td><input type="button" size ="1" value="  ...  "></td>
   </tr>
+  <tr>
+    <td><input type="text" size ="16" name ="codigo2"></td>
+    <td><input type="text" size="120"></td>
+    <td><input type="text" size ="2" readonly></td>
+    <td><input type="text" size ="2" name="qtd2"></td>
+    <td><input type="text" size ="1" readonly></td>
+    <td><input type="button" size ="1" value="  ...  "></td>
+  </tr>
+  <tr>
+    <td><input type="text" size ="16" name ="codigo3"></td>
+    <td><input type="text" size="120"></td>
+    <td><input type="text" size ="2" readonly></td>
+    <td><input type="text" size ="2" name="qtd3"></td>
+    <td><input type="text" size ="1" readonly></td>
+    <td><input type="button" size ="1" value="  ...  "></td>
+  </tr>
+
 </table>
  ##Ao preencher este, outro será gerado automáticamente!<br />
-<input type="submit" value="Confirma"> - <input type="button" value="Limpa todos os produtos">
+<input type="submit" value="Confirma"> - <input type="button" value="Limpa todos os 
+
+produtos">
 </form> 
 </body>
 </html>

@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 public class Produto {
 	private int id;
+	private float valor;
 	private String nome;
 	private int qtd;
 	private Calendar val_min;
@@ -37,6 +38,12 @@ public class Produto {
 	}
 	public void setVal_max(Calendar val_max) {
 		this.val_max = val_max;
+	}
+	public float getValor() {
+		return valor;
+	}
+	public void setValor(float valor) {
+		this.valor = valor;
 	}
 	
 }
