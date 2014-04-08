@@ -3,7 +3,7 @@ package br.com.mercearia.modelo;
 public class CompraProduto {
 	
 	private Compra compra;
-	private int valor;
+	private float valor;
 	private int qtd;
 	private Produto produto;
 	
@@ -19,11 +19,11 @@ public class CompraProduto {
 	public void setCompra(Compra compra) {
 		this.compra = compra;
 	}
-	public int getValor() {
+	public float getValor() {
 		return valor;
 	}
-	public void setValor(int valor) {
-		this.valor = valor;
+	public void setValor(float f) {
+		this.valor = f;
 	}
 	public int getQtd() {
 		return qtd;

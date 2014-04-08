@@ -1,10 +1,13 @@
 package br.com.mercearia.modelo;
 
+import java.util.Calendar;
+
 public class Pedido {
 	private int id;
 	private int valor;
 	private String descricao;
 	private Fornecedor fornecedor;
+	private Calendar dataHora;
 	public int getId() {
 		return id;
 	}
@@ -28,6 +31,12 @@ public class Pedido {
 	}
 	public void setFornecedor(Fornecedor fornecedor) {
 		this.fornecedor = fornecedor;
+	}
+	public Calendar getDataHora() {
+		return dataHora;
+	}
+	public void setDataHora(Calendar dataHora) {
+		this.dataHora = dataHora;
 	}
  
 }

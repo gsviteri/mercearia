@@ -5,13 +5,10 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import br.com.mercearia.modelo.Cliente;
 import br.com.mercearia.modelo.Funcionario;
 
 public class FuncionarioDAO {
@@ -19,22 +16,22 @@ public class FuncionarioDAO {
 	PreparedStatement ps;
 	private Connection connection;
 
-	public void adiciona(Cliente cliente) { //Ta errado aqui!!!!
+	public void adiciona(Funcionario funcionario) { // Ta errado aqui!!!!
 		connection = new Conexao().getConnection();
 
-		sql = "insert into cliente "
-				+ "(cpf, nome, telefone, sexo, dataNascimento)"
+		sql = "insert into funcionario "
+				+ "(cpf, nome, usuario, senha, telefone, dataNascimento)" // errado
 				+ " values (?, ?, ?, ?, ?)";
 
 		try {
 			ps = connection.prepareStatement(sql);
 
-			ps.setInt(1, cliente.getCpf());
-			ps.setString(2, cliente.getNome());
-			ps.setInt(3, cliente.getTelefone());
-			ps.setString(4, cliente.getSexo());
-			ps.setDate(5, new Date(cliente.getDataNascimento()
-					.getTimeInMillis()));
+			ps.setLong(1, funcionario.getCpf());
+			ps.setString(2, funcionario.getNome());
+			ps.setString(3, funcionario.getUsuario());
+			ps.setString(4, funcionario.getSenha());
+			ps.setLong(5, funcionario.getTelefone());
+			ps.setDate(6, new Date(funcionario.getDataNascimento().getTimeInMillis()));
 			ps.execute();
 			ps.close();
 			connection.close();
@@ -46,56 +43,85 @@ public class FuncionarioDAO {
 	public boolean checaLogin(String usuario, String senha) {
 		connection = new Conexao().getConnection();
 
-		sql = "select * from funcionario" + " where nome=? and senha=?";
+		sql = "select * from funcionario" + " where usuario=? and senha=?";
 
 		try {
 			ps = this.connection.prepareStatement(sql);
 			ps.setString(1, usuario);
 			ps.setString(2, senha);
 			ResultSet rs = ps.executeQuery();
-			if (rs.last() || rs.next()) {
+			if (rs.next()) {
 				System.out.println("True");
+				ps.close();
+				connection.close();
 				return true;
 			}
+			ps.close();
+			connection.close();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
 		System.out.println("false");
+		
 		return false;
 	}
 
 	public List<Funcionario> getLista() {
 		connection = new Conexao().getConnection();
-		String dataEmTexto;
 		sql = "select * from funcionario";
 		List<Funcionario> listaFuncionario = new ArrayList<Funcionario>();
 		try {
 			ps = connection.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
-			
+
 			while (rs.next()) {
 				Funcionario funcionario = new Funcionario();
-				try{
-					funcionario.setCpf(rs.getInt("cpf"));
-				} catch (RuntimeException e){ System.out.println("CPF Inválido");}
-				try{	
-					funcionario.setNome(rs.getString("nome"));
-				} catch (RuntimeException e){ System.out.println("Nome Inválido");}
-					funcionario.setTelefone(rs.getInt("telefone"));
+				funcionario.setCpf(rs.getLong("cpf"));
 				try {
-					Calendar data = Calendar.getInstance();
-					data.setTime(rs.getDate("dataNascimento"));
-					funcionario.setDataNascimento(data);
-				} catch (RuntimeException e) {
-					System.out.println("Erro de conversão.");
+					Calendar calendar = Calendar.getInstance();
+					calendar.setTime(rs.getDate("dataNascimento"));
+					funcionario.setDataNascimento(calendar);
+				} catch (SQLException e) {
 				}
-				
+				funcionario.setNome(rs.getString("nome"));
+				funcionario.setUsuario(rs.getString("usuario"));
+				try {
+					funcionario.setTelefone(rs.getLong("telefone"));
+				} catch (SQLException e) {
+				}
 				listaFuncionario.add(funcionario);
 			}
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
 		return listaFuncionario;
-		
+	}
+
+	public Funcionario busca(String usuario) {
+		connection = new Conexao().getConnection();
+		sql = "select * from funcionario where usuario =?";
+		Funcionario funcionario = new Funcionario();
+		try {
+			ps = this.connection.prepareStatement(sql);
+			ps.setString(1, usuario);
+			ResultSet rs = ps.executeQuery();
+			funcionario.setCpf(rs.getLong("cpf"));
+			try {
+				Calendar calendar = Calendar.getInstance();
+				calendar.setTime(rs.getDate("dataNascimento"));
+				funcionario.setDataNascimento(calendar);
+			} catch (SQLException e) {System.out.println("Erro na busca da data.");
+			}
+			funcionario.setNome(rs.getString("nome"));
+			funcionario.setUsuario(rs.getString("usuario"));
+			try {
+				funcionario.setTelefone(rs.getLong("telefone"));
+			} catch (SQLException e) {
+			}
+			return funcionario;
+		} catch (SQLException e) {
+			System.out.println("Erro na busca de funcionario.");
+		}
+		return funcionario;
 	}
 }

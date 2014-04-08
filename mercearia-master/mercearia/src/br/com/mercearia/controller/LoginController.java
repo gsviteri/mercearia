@@ -9,16 +9,15 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import br.com.mercearia.dao.FuncionarioDAO;
+import br.com.mercearia.util.Convercao;
 
+@SuppressWarnings("serial")
 public class LoginController extends HttpServlet{
-	private int Menu;
 	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		String usuario= request.getParameter("usuario");
 		String senha = request.getParameter("senha");
-		System.out.println(usuario + senha);
 		FuncionarioDAO dao = new FuncionarioDAO();
-		System.out.println(usuario);
 		if (dao.checaLogin(usuario, senha)){
 			HttpSession session = request.getSession();
 			session.setAttribute("usuario", usuario);

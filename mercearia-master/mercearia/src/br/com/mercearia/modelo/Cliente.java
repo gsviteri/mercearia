@@ -1,29 +1,37 @@
 package br.com.mercearia.modelo;
 
+
 import java.util.Calendar;
 
 public class Cliente {
-	private int cpf;
+	private int id;
+	private long doc;
 	private String nome;
-	private int telefone;
+	private String email;
+	private long telefone;
 	private String sexo;
 	private Calendar dataNascimento;
-	public int getCpf() {
-		return cpf;
+	public long getDoc() {
+		return doc;
 	}
-	public void setCpf(int cpf) {
-		this.cpf = cpf;
+	public void setDoc(long doc) {
+		this.doc = doc;
 	}
 	public String getNome() {
 		return nome;
 	}
+	public int getId() {
+		return id;
+	}public void setId(int id) {
+		this.id = id;
+	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getTelefone() {
+	public long getTelefone() {
 		return telefone;
 	}
-	public void setTelefone(int telefone) {
+	public void setTelefone(long telefone) {
 		this.telefone = telefone;
 	}
 	public String getSexo() {
@@ -37,6 +45,12 @@ public class Cliente {
 	}
 	public void setDataNascimento(Calendar dataNascimento) {
 		this.dataNascimento = dataNascimento;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 	

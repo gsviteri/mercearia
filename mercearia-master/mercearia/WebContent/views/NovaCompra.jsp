@@ -4,7 +4,7 @@
 </head>
 <body>
 <h2>Registro de uma nova compra:</h2>
-<form action="novaCompra" method="post"><br />
+<form action="Control" method="post"><br />
 <table border="0">
   <tr>
     <th>
@@ -51,12 +51,11 @@ Troco:</th>
     <td><input type="text" size ="1" readonly></td>
     <td><input type="button" size ="1" value="  ...  "></td>
   </tr>
+  <input type="hidden" name="logic" value="NovaCompraLogic">
 
 </table>
  ##Ao preencher este, outro será gerado automáticamente!<br />
-<input type="submit" value="Confirma"> - <input type="button" value="Limpa todos os 
-
-produtos">
+<input type="submit" value="Confirma"> - <input type="button" value="Limpa todos os produtos">
 </form> 
 </body>
 </html>

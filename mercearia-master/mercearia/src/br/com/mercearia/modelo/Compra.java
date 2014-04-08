@@ -5,7 +5,7 @@ import java.util.Calendar;
 public class Compra {
 	private int id;
 	private Calendar hora;
-	private int valor;
+	private float valor;
 	private Funcionario funcionario;
 	private Cliente cliente;
 	public int getId() {
@@ -20,10 +20,10 @@ public class Compra {
 	public void setHora(Calendar hora) {
 		this.hora = hora;
 	}
-	public int getValor() {
+	public float getValor() {
 		return valor;
 	}
-	public void setValor(int valor) {
+	public void setValor(float valor) {
 		this.valor = valor;
 	}
 	public Funcionario getFuncionario() {

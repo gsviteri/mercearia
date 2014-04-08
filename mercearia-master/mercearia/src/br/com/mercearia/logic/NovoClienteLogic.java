@@ -1,6 +1,7 @@
 package br.com.mercearia.logic;
 
-import java.util.Calendar;
+
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +14,8 @@ import br.com.mercearia.util.Convercao;
 public class NovoClienteLogic implements Logic {
 	public void executa(HttpServletRequest request, HttpServletResponse response)
 			throws Exception, ServletException {
-		String nome = request.getParameter("nome");
+		Cliente cliente = new Cliente();
+		cliente.setNome(request.getParameter("nome"));
 		int cpf = 0;
 		if (request.getParameter("cpf") != null
 				&& request.getParameter("cpf") != "") {
@@ -27,15 +29,11 @@ public class NovoClienteLogic implements Logic {
 		String stringSexo = request.getParameter("sexo");
 
 		// if (request.getParameter("dataNascimento") != null){
-		Calendar dataNascimento = null;
 		try {
-			dataNascimento = Convercao.dataEmTexto(request
-					.getParameter("dataNascimento"));
+			cliente.setDataNascimento(Convercao.textoEmData(request
+					.getParameter("dataNascimento")));
 		} catch (RuntimeException e) {
-			System.out.println("Data inválida");
 		}
-		Cliente cliente = new Cliente();
-		cliente.setNome(nome);
 
 		if (stringSexo.contains("feminino")) {
 			cliente.setSexo("f");
@@ -45,8 +43,7 @@ public class NovoClienteLogic implements Logic {
 			cliente.setSexo("0");
 		}
 
-		cliente.setDataNascimento(dataNascimento);
-		cliente.setCpf(cpf);
+		cliente.setDoc(cpf);
 		cliente.setTelefone(telefone);
 
 		ClienteDAO dao = new ClienteDAO();

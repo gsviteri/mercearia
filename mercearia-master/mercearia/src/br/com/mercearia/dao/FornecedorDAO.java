@@ -23,7 +23,7 @@ public class FornecedorDAO {
 			}
 
 			if (fornecedor.getTelefone() >= 0) {
-				ps.setInt(3, fornecedor.getTelefone());
+				ps.setLong(3, fornecedor.getTelefone());
 			}
 			if (fornecedor.getEmail() != null) {
 				ps.setString(4, fornecedor.getEmail());

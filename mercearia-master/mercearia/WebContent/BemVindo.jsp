@@ -12,7 +12,7 @@ Quem é você?<br>
 <jsp:useBean id="dao" class="br.com.mercearia.dao.FuncionarioDAO"/>
 <select name="usuario">
 <c:forEach var="funcionario" items="${dao.lista}">
-<option name=usuario value="${funcionario.nome}">${funcionario.nome}</option>
+<option name="usuario" value="${funcionario.usuario}">${funcionario.usuario}</option>
 </c:forEach>
 </select><br><br>	
 Senha: <br><input type="password" name="senha"><br /><br><br>
