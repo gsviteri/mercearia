@@ -12,7 +12,7 @@ public class NovoFornecedorLogic implements Logic {
 	public void executa(HttpServletRequest request, HttpServletResponse response)
 			throws Exception, ServletException {
 		Long cnpj = new Long(0);
-		int telefone = 0;
+		long  telefone = 0;
 		String nome = request.getParameter("nome");
 		
 		if (request.getParameter("cnpj") != null
@@ -22,7 +22,7 @@ public class NovoFornecedorLogic implements Logic {
 		
 		if (request.getParameter("telefone") != null
 				&& request.getParameter("telefone") != "") {
-			telefone = Integer.parseInt(request.getParameter("telefone"));
+			telefone = Long.parseLong(request.getParameter("telefone"));
 		}
 		String email = request.getParameter("email");
 		String endereco = request.getParameter("endereco");

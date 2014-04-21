@@ -16,7 +16,7 @@ public class ClienteDAO {
 		connection = new Conexao().getConnection();
 		//
 		String sql = "insert into cliente "
-				+ "(cpf, nome, telefone, sexo, email, dataNascimento)"
+				+ "(doc, nome, telefone, sexo, email, dataNascimento)"
 				+ " values (?, ?, ?, ?, ?, ?)";
 		// adicionar um switch case aqui!! para os diferentes tipos de cadastro
 		// (com email, sem data, etc)

@@ -99,12 +99,14 @@ public class FuncionarioDAO {
 
 	public Funcionario busca(String usuario) {
 		connection = new Conexao().getConnection();
-		sql = "select * from funcionario where usuario =?";
+		sql = "select * from funcionario where usuario = ?";
 		Funcionario funcionario = new Funcionario();
+		System.out.println("DAO: "+ usuario);
 		try {
 			ps = this.connection.prepareStatement(sql);
 			ps.setString(1, usuario);
 			ResultSet rs = ps.executeQuery();
+			rs.next();
 			funcionario.setCpf(rs.getLong("cpf"));
 			try {
 				Calendar calendar = Calendar.getInstance();
@@ -113,6 +115,7 @@ public class FuncionarioDAO {
 			} catch (SQLException e) {System.out.println("Erro na busca da data.");
 			}
 			funcionario.setNome(rs.getString("nome"));
+			System.out.println(funcionario.getCpf());
 			funcionario.setUsuario(rs.getString("usuario"));
 			try {
 				funcionario.setTelefone(rs.getLong("telefone"));
@@ -120,7 +123,7 @@ public class FuncionarioDAO {
 			}
 			return funcionario;
 		} catch (SQLException e) {
-			System.out.println("Erro na busca de funcionario.");
+			e.printStackTrace();
 		}
 		return funcionario;
 	}

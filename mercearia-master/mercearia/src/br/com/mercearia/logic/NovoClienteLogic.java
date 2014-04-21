@@ -21,10 +21,10 @@ public class NovoClienteLogic implements Logic {
 				&& request.getParameter("cpf") != "") {
 			cpf = Integer.parseInt(request.getParameter("cpf"));
 		}
-		int telefone = 0;
+		long telefone = 0;
 		if (request.getParameter("telefone") != null
 				&& request.getParameter("telefone") != "") {
-			telefone = Integer.parseInt(request.getParameter("telefone"));
+			telefone = Long.parseLong(request.getParameter("telefone"));
 		}
 		String stringSexo = request.getParameter("sexo");
 
@@ -51,7 +51,7 @@ public class NovoClienteLogic implements Logic {
 
 		request.setAttribute("nomeAdicionado", cliente.getNome());
 		RequestDispatcher rd = request
-				.getRequestDispatcher("views/NovoCliente.jsp");
+				.getRequestDispatcher("NovoCliente.jsp");
 		rd.forward(request, response);
 	}
 }

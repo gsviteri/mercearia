@@ -17,7 +17,7 @@ public class CompraProdutoDAO {
 				+ " values (?, ?, ?, ?)";
 		try {
 			PreparedStatement ps = connection.prepareStatement(sql);
-
+			System.out.println("8888888888" +compraProduto.getProduto().getId());
 			ps.setLong(1, compraProduto.getProduto().getId());
 			ps.setInt(2, compraProduto.getCompra().getId());
 			ps.setFloat(3, compraProduto.getValor());
@@ -26,7 +26,7 @@ public class CompraProdutoDAO {
 			ps.close();
 			connection.close();
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
+			e.printStackTrace();
 		}
 	}
 }
