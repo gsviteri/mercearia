@@ -14,6 +14,7 @@ import br.com.mercearia.util.Convercao;
 public class NovoProdutoLogic implements Logic {
 	public void executa(HttpServletRequest request, HttpServletResponse response)
 			throws Exception, ServletException {
+		final String teste = "teste";
 		Produto produto = new Produto();
 		produto.setId(Long.parseLong(request.getParameter("id")));
 		produto.setNome(request.getParameter("nome"));
@@ -23,12 +24,14 @@ public class NovoProdutoLogic implements Logic {
 			produto.setQtd(Integer.parseInt(request.getParameter("qtd")));
 		} catch (RuntimeException e) {
 		}
-		if  ((String) "teste" == request.getParameter("imperecivel")){
+		if(teste.equals(request.getParameter("imperecivel"))){
 			produto.setVal_max(Convercao.textoEmData("01/01/9999"));
 			produto.setVal_min(Convercao.textoEmData("01/01/9999"));
 			System.out.println("Passou por aqui!");
 			System.out.println(produto.getVal_max().getTime());
-		} else {
+		}
+		else
+		{
 			try {
 				produto.setVal_max(Convercao.textoEmData(request
 						.getParameter("val_max")));

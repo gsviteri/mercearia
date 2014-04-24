@@ -16,12 +16,12 @@ public class FuncionarioDAO {
 	PreparedStatement ps;
 	private Connection connection;
 
-	public void adiciona(Funcionario funcionario) { // Ta errado aqui!!!!
+	public void adiciona(Funcionario funcionario) { 
 		connection = new Conexao().getConnection();
 
 		sql = "insert into funcionario "
-				+ "(cpf, nome, usuario, senha, telefone, dataNascimento)" // errado
-				+ " values (?, ?, ?, ?, ?)";
+				+ "(cpf, nome, usuario, senha, telefone, dataNascimento)"
+				+ " values (?, ?, ?, ?, ?, ?)";
 
 		try {
 			ps = connection.prepareStatement(sql);
@@ -30,8 +30,11 @@ public class FuncionarioDAO {
 			ps.setString(2, funcionario.getNome());
 			ps.setString(3, funcionario.getUsuario());
 			ps.setString(4, funcionario.getSenha());
-			ps.setLong(5, funcionario.getTelefone());
-			ps.setDate(6, new Date(funcionario.getDataNascimento().getTimeInMillis()));
+			try{
+				ps.setLong(5, funcionario.getTelefone());
+			}catch(RuntimeException e){}
+			ps.setDate(6, new Date(funcionario.getDataNascimento()
+					.getTimeInMillis()));
 			ps.execute();
 			ps.close();
 			connection.close();
@@ -62,7 +65,7 @@ public class FuncionarioDAO {
 			throw new RuntimeException(e);
 		}
 		System.out.println("false");
-		
+
 		return false;
 	}
 
@@ -101,7 +104,7 @@ public class FuncionarioDAO {
 		connection = new Conexao().getConnection();
 		sql = "select * from funcionario where usuario = ?";
 		Funcionario funcionario = new Funcionario();
-		System.out.println("DAO: "+ usuario);
+		System.out.println("DAO: " + usuario);
 		try {
 			ps = this.connection.prepareStatement(sql);
 			ps.setString(1, usuario);
@@ -112,7 +115,8 @@ public class FuncionarioDAO {
 				Calendar calendar = Calendar.getInstance();
 				calendar.setTime(rs.getDate("dataNascimento"));
 				funcionario.setDataNascimento(calendar);
-			} catch (SQLException e) {System.out.println("Erro na busca da data.");
+			} catch (SQLException e) {
+				System.out.println("Erro na busca da data.");
 			}
 			funcionario.setNome(rs.getString("nome"));
 			System.out.println(funcionario.getCpf());
