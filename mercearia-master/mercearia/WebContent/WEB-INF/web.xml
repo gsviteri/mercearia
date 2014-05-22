@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee"
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_ID" version="3.0">
 	<display-name>Mercearia</display-name>
@@ -13,14 +12,24 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>controlador</servlet-name>
+		<url-pattern>/Control</url-pattern>
 		<url-pattern>/views/Control</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>BuscaCliente</servlet-name>
+		<servlet-class>br.com.mercearia.servlet.BuscaCliente</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BuscaCliente</servlet-name>
+		<url-pattern>/BuscaCliente</url-pattern>
+		<url-pattern>/views/BuscaCliente</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>Logando</servlet-name>
 		<servlet-class>br.com.mercearia.controller.LoginController</servlet-class>
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>Logando</servlet-name>
 		<url-pattern>/ValidandoLogin</url-pattern>
@@ -29,13 +38,11 @@
 
 	<error-page>
 		<error-code>404</error-code>
-		<location>/mercearia/404.jsp</location>
+		<location>/404.jsp</location>
 	</error-page>
-
 
 	<error-page>
 		<error-code>500</error-code>
 		<location>/500.jsp</location>
 	</error-page>
-
 </web-app>

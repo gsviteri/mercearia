@@ -27,11 +27,14 @@ public class ProdutoDAO {
 			while (rs.next()) {
 				produto.setNome(rs.getString("nome"));
 				produto.setQtd(rs.getInt("qtd"));
-				Calendar calendar = Calendar.getInstance();
-				calendar.setTime(rs.getDate("val_max"));
-				produto.setVal_max(calendar);
-				calendar.setTime(rs.getDate("val_min"));
-				produto.setVal_min(calendar);
+				try {
+					Calendar calendar = Calendar.getInstance();
+					calendar.setTime(rs.getDate("val_max"));
+					produto.setVal_max(calendar);
+					calendar.setTime(rs.getDate("val_min"));
+					produto.setVal_min(calendar);
+				} catch (SQLException e) {System.out.println("Deu pau na data do produto.");
+				}
 				produto.setValor(rs.getFloat("valor"));
 				produto.setId(rs.getLong("id"));
 			}

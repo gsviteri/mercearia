@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.mercearia.dao.FuncionarioDAO;
 import br.com.mercearia.modelo.Funcionario;
-import br.com.mercearia.util.Convercao;
+import br.com.mercearia.util.Conversao;
 
 public class NovoFuncionarioLogic implements Logic {
 	public void executa(HttpServletRequest request, HttpServletResponse response)
@@ -23,7 +23,7 @@ public class NovoFuncionarioLogic implements Logic {
 						.getParameter("telefone")));
 			} catch (RuntimeException e) {
 			}
-			funcionario.setDataNascimento(Convercao.textoEmData(request
+			funcionario.setDataNascimento(Conversao.textoEmData(request
 					.getParameter("dataNascimento")));
 
 			FuncionarioDAO dao = new FuncionarioDAO();

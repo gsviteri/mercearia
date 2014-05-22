@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import br.com.mercearia.dao.FuncionarioDAO;
-import br.com.mercearia.util.Convercao;
+import br.com.mercearia.util.Conversao;
 
 @SuppressWarnings("serial")
 public class LoginController extends HttpServlet{
@@ -21,14 +21,13 @@ public class LoginController extends HttpServlet{
 		if (dao.checaLogin(usuario, senha)){
 			HttpSession session = request.getSession();
 			session.setAttribute("usuario", usuario);
-			//request.setAttribute("logic", "menu");
-			System.out.println("Mandando para o menu...");
+			System.out.println("Rolou :D");
 			response.sendRedirect("views/Menu.jsp");
 			return;
 		}
 		else{
 			System.out.println("Errado");
-			request.getRequestDispatcher("/BemVindo.jsp").forward(request, response); 
+			request.getRequestDispatcher("BemVindo.jsp").forward(request, response); 
 		}
 	}
 }

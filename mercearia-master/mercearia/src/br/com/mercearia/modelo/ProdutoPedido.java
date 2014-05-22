@@ -4,7 +4,7 @@ public class ProdutoPedido {
 	private Produto produto;
 	private Pedido pedido;
 	private int qtd;
-	private int valor;
+	private float valor;
 	public Produto getProduto() {
 		return produto;
 	}
@@ -23,11 +23,11 @@ public class ProdutoPedido {
 	public void setQtd(int qtd) {
 		this.qtd = qtd;
 	}
-	public int getValor() {
+	public float getValor() {
 		return valor;
 	}
-	public void setValor(int valor) {
-		this.valor = valor;
+	public void setValor(float f) {
+		this.valor = f;
 	}
 	
 }

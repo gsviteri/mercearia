@@ -8,5 +8,9 @@
 	</classpathentry>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/jstl-impl-1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Vanderson/Workspace/apache-tomcat-7.0.52/lib/servlet-api.jar" sourcepath="C:/Program Files/Java/jdk1.7.0_45/src.zip"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/jstl-api-1.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.14.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -34,8 +34,6 @@ public class ControllerServlet extends HttpServlet {
 			}
 
 		} else {
-			System.out.println("Redirecionando para Nova compra...");
-//			response.sendRedirect("views/NovaCompra.jsp"); //teste de redirecionamento
 			request.getRequestDispatcher("/views/NovaCompra.jsp").forward(request,
 					response);
 			

@@ -18,8 +18,7 @@ public class ClienteDAO {
 		String sql = "insert into cliente "
 				+ "(doc, nome, telefone, sexo, email, dataNascimento)"
 				+ " values (?, ?, ?, ?, ?, ?)";
-		// adicionar um switch case aqui!! para os diferentes tipos de cadastro
-		// (com email, sem data, etc)
+
 		try {
 			PreparedStatement ps = connection.prepareStatement(sql);
 
@@ -28,7 +27,8 @@ public class ClienteDAO {
 			ps.setLong(3, cliente.getTelefone());
 			ps.setString(4, cliente.getSexo());
 			ps.setString(5, cliente.getEmail());
-			ps.setDate(6, new Date(cliente.getDataNascimento().getTimeInMillis()));
+			ps.setDate(6, new Date(cliente.getDataNascimento()
+					.getTimeInMillis()));
 			ps.execute();
 			ps.close();
 			connection.close();
@@ -37,31 +37,35 @@ public class ClienteDAO {
 		}
 	}
 
-	public Cliente busca(String nome) {
+	public Cliente busca(String palavraChave, String parametro) {
 		connection = new Conexao().getConnection();
 
-		String sql = "select * from funcionario" + " where nome=? and senha=?";
+		String sql = "select * from cliente where nome = ?";
 
 		try {
 			PreparedStatement ps = connection.prepareStatement(sql);
+			
 			ps = this.connection.prepareStatement(sql);
-			ps.setString(1, nome);
+			//ps.setString(1, parametro);
+			ps.setString(1, palavraChave);
+			System.out.println(sql);
 			ResultSet rs = ps.executeQuery();
+			rs.next();
 			Cliente cliente = new Cliente();
-			cliente.setId(rs.getInt("id.cliente"));
+			System.out.println("Parametro: "+ parametro + " - PC: "+palavraChave);
+			//cliente.setId(rs.getInt("id_cliente"));
 			cliente.setNome(rs.getString("nome"));
-			cliente.setDoc(rs.getLong("cpf"));
+			cliente.setDoc(rs.getLong("doc"));
 			cliente.setTelefone(rs.getInt("telefone"));
 			cliente.setSexo(rs.getString("sexo"));
 			Calendar calendar = Calendar.getInstance();
 			calendar.setTime(rs.getDate("dataNascimento"));
 			cliente.setDataNascimento(calendar);
 			cliente.setEmail(rs.getString("email"));
+			System.out.println("Parametro: "+ parametro + " - PC: "+palavraChave+" -  Resultado: "+ cliente.getNome());
 			return cliente;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
-
 	}
-
 }

@@ -1,7 +1,5 @@
 package br.com.mercearia.logic;
 
-import java.util.Calendar;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -49,7 +47,7 @@ public class NovaCompraLogic implements Logic {
 		Compra compra = new Compra();
 		if (cliente != "" && cliente != null) {
 			ClienteDAO clidao = new ClienteDAO();
-			compra.setCliente(clidao.busca(cliente));
+			compra.setCliente(clidao.busca(cliente, "nome"));
 			boo = true;
 		}
 		compra.setFuncionario(funcionario);
@@ -69,7 +67,6 @@ public class NovaCompraLogic implements Logic {
 				j = 0;
 				produto = pdao.busca(Long.parseLong(request
 						.getParameter("codigo" + i)));
-				System.out.println("========="+ i + " - "+ produto.getId());
 				compraProduto.setProduto(produto);
 				compraProduto.setCompra(compra);
 				System.out.println(compraProduto.getCompra().getId());

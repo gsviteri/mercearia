@@ -4,20 +4,21 @@ import java.util.Calendar;
 
 public class Pedido {
 	private int id;
-	private int valor;
+	private float valor;
 	private String descricao;
 	private Fornecedor fornecedor;
 	private Calendar dataHora;
+	private Funcionario funcionario;
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getValor() {
+	public float  getValor() {
 		return valor;
 	}
-	public void setValor(int valor) {
+	public void setValor(float valor) {
 		this.valor = valor;
 	}
 	public String getDescricao() {
@@ -38,5 +39,12 @@ public class Pedido {
 	public void setDataHora(Calendar dataHora) {
 		this.dataHora = dataHora;
 	}
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
+
  
 }

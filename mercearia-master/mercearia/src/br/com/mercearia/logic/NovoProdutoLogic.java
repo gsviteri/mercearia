@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.mercearia.dao.ProdutoDAO;
 import br.com.mercearia.modelo.Produto;
-import br.com.mercearia.util.Convercao;
+import br.com.mercearia.util.Conversao;
 
 public class NovoProdutoLogic implements Logic {
 	public void executa(HttpServletRequest request, HttpServletResponse response)
@@ -25,17 +25,17 @@ public class NovoProdutoLogic implements Logic {
 		} catch (RuntimeException e) {
 		}
 		if(teste.equals(request.getParameter("imperecivel"))){
-			produto.setVal_max(Convercao.textoEmData("01/01/9999"));
-			produto.setVal_min(Convercao.textoEmData("01/01/9999"));
+			produto.setVal_max(Conversao.textoEmData("01/01/9999"));
+			produto.setVal_min(Conversao.textoEmData("01/01/9999"));
 			System.out.println("Passou por aqui!");
 			System.out.println(produto.getVal_max().getTime());
 		}
 		else
 		{
 			try {
-				produto.setVal_max(Convercao.textoEmData(request
+				produto.setVal_max(Conversao.textoEmData(request
 						.getParameter("val_max")));
-				produto.setVal_min(Convercao.textoEmData(request
+				produto.setVal_min(Conversao.textoEmData(request
 						.getParameter("val_min")));
 			} catch (ParseException e) {
 			}
