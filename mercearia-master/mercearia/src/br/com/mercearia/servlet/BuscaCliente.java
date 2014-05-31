@@ -1,6 +1,8 @@
 package br.com.mercearia.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,18 +20,24 @@ public class BuscaCliente extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		String palavraChave = request.getParameter("palavraChave");
 		String parametro = request.getParameter("parametro");
-		Cliente cliente = cdao.busca(palavraChave, parametro);
+		List <Cliente> listaCliente = new ArrayList<Cliente>();
+		listaCliente = cdao.busca(palavraChave, parametro);
+		response.getWriter().write("<div>");
+		int i = 0;
+		for (Cliente cliente : listaCliente){
 		String dataNascimento = Conversao.calendarEmTexto(cliente.getDataNascimento());
 		if (cliente != null) {
-			//request.getSession().setAttribute("cliente", cliente);
-			response.getWriter().write("<div> "+
-					"<input type=\"hidden\" id=\"nome1\" value=\""+ cliente.getNome() + "\">"+
-					"<input type=\"hidden\" id=\"telefone1\" value=\""+ cliente.getTelefone() + "\">"+
-					"<input type=\"hidden\" id=\"doc1\" value=\""+ cliente.getDoc() + "\">"+
-					"<input type=\"hidden\" id=\"email1\" value=\""+ cliente.getEmail() + "\">"+
-					"<input type=\"hidden\" id=\"sexo1\" value=\""+ cliente.getSexo() + "\">"+
-					"<input type=\"hidden\" id=\"data1\" value=\""+ dataNascimento + "\">"+
-					"<div>");
+			response.getWriter().write(
+					"<input type=\"hidden\" id=\"nome"+i+"\" value=\""+ cliente.getNome() + "\">"+
+					"<input type=\"hidden\" id=\"telefone"+i+"\" value=\""+ cliente.getTelefone() + "\">"+
+					"<input type=\"hidden\" id=\"doc"+i+"\" value=\""+ cliente.getDoc() + "\">"+
+					"<input type=\"hidden\" id=\"email"+i+"\" value=\""+ cliente.getEmail() + "\">"+
+					"<input type=\"hidden\" id=\"sexo"+i+"\" value=\""+ cliente.getSexo() + "\">"+
+					"<input type=\"hidden\" id=\"data"+i+"\" value=\""+ dataNascimento + "\">"
+					);
 		}
+		i++;
+		}
+		response.getWriter().write("</div>");
 	}
 }

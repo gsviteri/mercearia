@@ -5,7 +5,9 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import br.com.mercearia.modelo.Cliente;
 
@@ -37,7 +39,7 @@ public class ClienteDAO {
 		}
 	}
 
-	public Cliente busca(String palavraChave, String parametro) {
+	public List<Cliente> busca(String palavraChave, String parametro) {
 		connection = new Conexao().getConnection();
 
 		String sql = "select * from cliente where nome = ?";
@@ -47,10 +49,12 @@ public class ClienteDAO {
 			
 			ps = this.connection.prepareStatement(sql);
 			//ps.setString(1, parametro);
-			ps.setString(1, palavraChave);
+			ps.setString(1, palavraChave);//aqui o index eh 2...
 			System.out.println(sql);
 			ResultSet rs = ps.executeQuery();
+			List <Cliente> listaCliente = new ArrayList<Cliente>();
 			rs.next();
+			do{
 			Cliente cliente = new Cliente();
 			System.out.println("Parametro: "+ parametro + " - PC: "+palavraChave);
 			//cliente.setId(rs.getInt("id_cliente"));
@@ -63,7 +67,10 @@ public class ClienteDAO {
 			cliente.setDataNascimento(calendar);
 			cliente.setEmail(rs.getString("email"));
 			System.out.println("Parametro: "+ parametro + " - PC: "+palavraChave+" -  Resultado: "+ cliente.getNome());
-			return cliente;
+			listaCliente.add(cliente);
+			}
+			while(rs.next());
+			return listaCliente;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

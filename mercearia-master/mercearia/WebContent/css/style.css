@@ -1,0 +1,76 @@
+* {
+	font-family: verdana;
+	font-size: 15px;
+	color:#888888;	
+}
+
+.body {
+	background-image:url("White.jpg");
+	background-size: 100%;
+}
+
+h1{
+	font-family: Gabriola;
+	font-size: 40px;
+}
+
+h2{
+	font-family: Arial;
+	font-size: 25px;	
+}
+
+.form{
+	line-height:280%;
+}
+.titulo{
+	margin-left:30px;
+	top: 0;	
+}
+.esquerda{
+	margin-left:70px;
+}
+
+.menu {
+	width: 20%;
+}
+
+.content {
+	position: absolute;
+	left: 130px;
+	top: 0;
+	background-color:"red";
+}
+
+.margemP{
+	margin:0px 30px;	
+}
+
+.mao{
+	cursor:hand;
+	font-family:times new roman;
+	font-size: 20px;
+	
+}
+
+.margemM{
+	margin:0px 70px;	
+}
+
+.container{
+	height:100%;
+	padding:0px,0px;
+	top:0;
+}
+.metadeEsquerda{ 
+	width:500px;
+	float:left;
+	padding:0px,0px;
+	top:0;
+	background-color:"green";
+}
+
+.metadeDireita{
+	width:600px;
+	float:right;
+	background-color:"blue";
+}

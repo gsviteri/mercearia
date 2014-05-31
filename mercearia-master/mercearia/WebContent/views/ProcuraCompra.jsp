@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Procura uma compra</title>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
 <form action="procuraCompra">

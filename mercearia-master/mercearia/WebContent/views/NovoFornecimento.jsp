@@ -1,6 +1,7 @@
 <html>
 <head>
 <script type="text/javascript"  src="../js/scripts.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
 <title>Novo fornecimento</title>
 </head>
 <body>

@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import br.com.mercearia.dao.ClienteDAO;
 import br.com.mercearia.dao.CompraDAO;
 import br.com.mercearia.dao.CompraProdutoDAO;
 import br.com.mercearia.dao.FuncionarioDAO;
@@ -43,13 +42,13 @@ public class NovaCompraLogic implements Logic {
 			}
 
 		} while (j > 0);
-		String cliente = request.getParameter("nomeCliente");
+		//String cliente = request.getParameter("nomeCliente");
 		Compra compra = new Compra();
-		if (cliente != "" && cliente != null) {
+		/*if (cliente != "" && cliente != null) { // ** Esse trecho eh um pequeno ajuste ... **
 			ClienteDAO clidao = new ClienteDAO();
-			compra.setCliente(clidao.busca(cliente, "nome"));
+			compra.setCliente(clidao.busca(cliente, ""));
 			boo = true;
-		}
+		}*/
 		compra.setFuncionario(funcionario);
 		compra.setValor(total);
 		CompraDAO comdao = new CompraDAO();
