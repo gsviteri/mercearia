@@ -8,13 +8,13 @@
 	<div class="esquerda"><form action="Control" method="post">
 		<p class="form">
 		Nome*:
-			<input type="text" name="nome"><br /> 
+			<input type="text" name="nome" autofocus><br /> 
 		CNPJ:
 			<input	type="text" name="cnpj"><br /> 
 		Telefone: 
 			<input type="text"	name="telefone"><br /> 
 		Email: 
-			<input type="text" name="email"><br /> 
+			<input type="email" name="email"><br /> 
 		Endereço: 
 			<input type="text" name="endereco"><br /> 
 			<input type="hidden" name="logic" value="NovoFornecedorLogic">

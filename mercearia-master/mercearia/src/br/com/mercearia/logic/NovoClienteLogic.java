@@ -47,7 +47,7 @@ public class NovoClienteLogic implements Logic {
 
 		ClienteDAO dao = new ClienteDAO();
 		dao.adiciona(cliente);
-		request.setAttribute("nomeAdicionado", cliente.getNome());
+		request.setAttribute("cliente", "cliente");
 		RequestDispatcher rd = request
 				.getRequestDispatcher("NovoCliente.jsp");
 		rd.forward(request, response);

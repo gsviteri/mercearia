@@ -8,7 +8,16 @@ public class Funcionario {
 	private String usuario;
 	private long telefone;
 	private Calendar dataNascimento;
+	private String email;
 	private String senha;
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public long getCpf() {
 		return cpf;

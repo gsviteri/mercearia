@@ -42,7 +42,7 @@ function buscaDadosCliente() {
 		$(".metadeDireita").html(
 			"<table>"+
 				"<tr id=\"falso\">"+
-					"<td width=\"350\"><h1>Nome</h1></td>"+
+					"<td width=\"250\"><h1>Nome</h1></td>"+
 					"<td width=\"100\"><h1>CPF</h1></td>"+
 					"<td><h1>Telefone</h1></td>"+
 				"</tr>"+

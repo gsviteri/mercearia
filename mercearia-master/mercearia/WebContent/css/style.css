@@ -3,7 +3,63 @@
 	font-size: 15px;
 	color:#888888;	
 }
+input:focus{
+	color:#555555;
+    background-color:#eeeeee;
+}
 
+input{
+	color:black;
+    background-color:white;
+}
+
+.bVerde{
+    line-height:22px !important;
+    border: 2px solid GREY !important;
+    background: #00c000 !important;
+    box-shadow: 0 0 3px WHITE !important;
+    font-size:14px !important;
+
+}
+.erro{
+	display:none;
+	color:red;
+	
+}
+.bVermelho{
+    color:#EEEEEE !important;
+    background: #f00000 !important;
+}
+
+input[type=button]{
+    line-height:20px;
+    border: 1px solid black;
+    border-radius: 15%;
+    color:#444444;
+    text-align:center;
+    text-decoration:none;
+    background: #c0c0c0;
+    box-shadow: 0 0 1px gray;
+    font-size:12px;
+    font-weight:bold;
+}
+
+input[type=submit]{
+    line-height:20px;
+    border: 1px solid black;
+    border-radius:15%;
+    color:#444444;
+    text-align:center;
+    text-decoration:none;
+    background: #c0c0c0;
+    box-shadow: 0 0 1px gray;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.data{
+	width:160px;
+}
 .body {
 	background-image:url("White.jpg");
 	background-size: 100%;
@@ -62,7 +118,7 @@ h2{
 	top:0;
 }
 .metadeEsquerda{ 
-	width:500px;
+	width:600px;
 	float:left;
 	padding:0px,0px;
 	top:0;
@@ -70,7 +126,16 @@ h2{
 }
 
 .metadeDireita{
-	width:600px;
+	width:400px;
 	float:right;
 	background-color:"blue";
+}
+
+
+th{
+	text-align:left;	
+	background-color:#dddddd;
+}
+.inputTabela{
+		font-size:14px;
 }

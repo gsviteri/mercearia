@@ -26,7 +26,7 @@ public class LoginController extends HttpServlet{
 			return;
 		}
 		else{
-			System.out.println("Errado");
+			request.setAttribute("erro", "erro");
 			request.getRequestDispatcher("BemVindo.jsp").forward(request, response); 
 		}
 	}

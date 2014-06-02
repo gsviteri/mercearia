@@ -20,8 +20,8 @@ public class FuncionarioDAO {
 		connection = new Conexao().getConnection();
 
 		sql = "insert into funcionario "
-				+ "(cpf, nome, usuario, senha, telefone, dataNascimento)"
-				+ " values (?, ?, ?, ?, ?, ?)";
+				+ "(cpf, nome, usuario, senha, email, telefone, dataNascimento)"
+				+ " values (?, ?, ?, ?, ?, ?, ?)";
 
 		try {
 			ps = connection.prepareStatement(sql);
@@ -31,9 +31,13 @@ public class FuncionarioDAO {
 			ps.setString(3, funcionario.getUsuario());
 			ps.setString(4, funcionario.getSenha());
 			try{
+				ps.setLong(6, funcionario.getTelefone());
+			}catch(RuntimeException e){}
+			try{
 				ps.setLong(5, funcionario.getTelefone());
 			}catch(RuntimeException e){}
-			ps.setDate(6, new Date(funcionario.getDataNascimento()
+			
+			ps.setDate(7, new Date(funcionario.getDataNascimento()
 					.getTimeInMillis()));
 			ps.execute();
 			ps.close();

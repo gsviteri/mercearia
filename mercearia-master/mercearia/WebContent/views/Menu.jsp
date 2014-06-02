@@ -45,27 +45,27 @@ a {
 		<img src="../images/Compra.jpg" alt="Compra" height="75" width="75" title="Compra">
 		<div>
 			<p class="opcao"><a href="NovaCompra.jsp" target="ctn">NOVA</a></p>
-			<p class="opcao"><a href="ProcurarCompra.jsp" target="ctn">EXISTENTE</a></p>
+			<p class="opcao"><a href="ProcuraCompra.jsp" target="ctn">EXISTENTE</a></p>
 		</div>
 		<img src="../images/Produto.jpg" alt="Produto" height="75" width="75" title="Produto">
 		<div>
 			<p class="opcao"><a href="NovoProduto.jsp" target="ctn">NOVO</a></p>
-			<p class="opcao"><a href="ProcurarProduto.jsp" target="ctn">EXISTENTE</a></p>
+			<p class="opcao"><a href="ProcuraProduto.jsp" target="ctn">EXISTENTE</a></p>
 		</div>
 		<img src="../images/Fornecimento.jpg" alt="Fornecimento" height="75" width="75" title="Fornecimento">
 		<div>
 			<p class="opcao"><a href="NovoFornecimento.jsp" target="ctn">NOVA</a></p>
-			<p class="opcao"><a href="ProcurarFornecimento.jsp" target="ctn">EXISTENTE</a></p>
+			<p class="opcao"><a href="ProcuraFornecimento.jsp" target="ctn">EXISTENTE</a></p>
 		</div>
 		<img src="../images/Fornecedor.jpg" alt="Fornecedor" height="75" width="75" title="Fornecedor">
 		<div>
 			<p class="opcao"><a href="NovoFornecedor.jsp" target="ctn">NOVO</a></p>
-			<p class="opcao"><a href="ProcurarFornecedor.jsp" target="ctn">EXISTENTE</a></p>
+			<p class="opcao"><a href="ProcuraFornecedor.jsp" target="ctn">EXISTENTE</a></p>
 		</div>
 		<img src="../images/Funcionario.jpg" alt="Funcionario" height="75" width="75" title="Funcionario">
 		<div>
 			<p class="opcao"><a href="NovoFuncionario.jsp" target="ctn">NOVO</a></p>
-			<p class="opcao"><a href="ProcurarFuncionario.jsp" target="ctn">EXISTENTE</a></p>
+			<p class="opcao"><a href="ProcuraFuncionario.jsp" target="ctn">EXISTENTE</a></p>
 		</div>
 		<img src="../images/Relatorio.jpg" alt="Relatorio" height="75" width="75" title="Relatório">
 		<div>

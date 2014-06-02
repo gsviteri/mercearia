@@ -42,13 +42,14 @@ public class ClienteDAO {
 	public List<Cliente> busca(String palavraChave, String parametro) {
 		connection = new Conexao().getConnection();
 
-		String sql = "select * from cliente where nome = ?";
+		String sql = "select * from cliente where nome like ?";
 
 		try {
 			PreparedStatement ps = connection.prepareStatement(sql);
 			
 			ps = this.connection.prepareStatement(sql);
 			//ps.setString(1, parametro);
+			palavraChave= ("%"+palavraChave+"%");
 			ps.setString(1, palavraChave);//aqui o index eh 2...
 			System.out.println(sql);
 			ResultSet rs = ps.executeQuery();

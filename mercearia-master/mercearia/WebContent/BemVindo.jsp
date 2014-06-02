@@ -3,6 +3,16 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript"  src="js/scripts.js"></script>
+<script type="text/javascript">
+	window.onload = function()
+	{
+		if ( "${erro}" == "erro") 
+		{
+		alert("Usuário ou senha inválida, tente novamente");
+		}
+	};
+	</script>
 <style type="text/css">
 #myDiv
 {
@@ -21,14 +31,15 @@
 <div id="myDiv">
 <h2>Bem vindo!</h2>
 <form action="ValidandoLogin" method="post">
+<h3>Usuário </h3>
+<select name="usuario">
 <jsp:useBean id="dao" class="br.com.mercearia.dao.FuncionarioDAO"/>
-<h3>Usuário</h3> <select name="usuario">
 <c:forEach var="funcionario" items="${dao.lista}">
 <option value="${funcionario.usuario}">${funcionario.usuario}</option>
 </c:forEach>
 </select>
-<h3>Senha:</h3><input type="password" name="senha">
-<br/><br/><input type="submit" value="Confirma"></div></h2>
-</form>
+<h3>Senha: </h3>
+<input required type="password" name="senha">
+<br/><br/><input type="submit" value="Confirma"></form></div>
 </body>
 </html>

@@ -5,6 +5,12 @@
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 <style type="text/css">
 	
+	table, th, td
+	{
+	border-collapse:collapse;
+	border: 1px solid white;
+	}
+	
 	.header{
 	height:200px;
 	}
@@ -69,83 +75,81 @@
 	}
 	
 	.ccodigo{
-	width:55px;
+	width:130px;
 	}
 	
 	.cproduto{
-	
+	width:700px;
 	}
 	
 	.cunid{
-	
+	width:80px;
 	}
 	
 	.cqtd{
-	
+	width:100px;
 	}
 	
 	.ctotal{
-	
+	width:80px;
 	}
 	
 	.copcoes{
 	
 	}
 	
-	table, th, td{
-	border-collapse:collapse;
-	border: 1px solid white;
-	width:100%;
-	}
-	th{
-	text-align:left;	
-	background-color:#dddddd;
-	}
 	
 	td{
 	text-align:left;
 	background-color:#eeeeeee;
 	
 	}
+
+
 	
 </style>
 
 </head>
 <body>
 	<div class="header">
+	
 		<div class="cabecalho left">
-			<h1>Registro de uma nova compra:</h1>
+			<div class="titulo"><h1>Registro de uma nova compra:</h1></div>
 			<p>
 			Funcionário: ${usuario}
 			</p>
 		</div>
+	
 		<div class="cabecalho right">
-			<div id="pago" class="valor"><p class="letraG"> PAGO<br/></p><p class="letraM">R$1000,00</p></div>
-			<div id="troco" class="valor"><p class="letraG"> TROCO<br/></p><p class="letraM">R$987,14</p></div>
-			<div id="total" class="valor"><p class="letraG"> TOTAL<br/></p><p class="letraM">R$73,88</p></div>
+			<div id="pago" class="valor"><p class="letraG"> PAGO<br/></p><p class="letraM">R$ 0,00</p></div>
+			<div id="troco" class="valor"><p class="letraG"> TROCO<br/></p><p class="letraM">R$ 0,00</p></div>
+			<div id="total" class="valor"><p class="letraG"> TOTAL<br/></p><p class="letraM">R$ 0,00</p></div>
 		</div>
+	
 	</div>
+	
 	<div id=corpo>
 		<form action="Control" method="post">	
+			
 			<table>
 					<tr>
 						<th class="ccodigo">Código</th>
 						<th class="cproduto">Produto</th>
-						<th class="cunid">Unid.</th>
-						<th class="cqtd">Qtd.</th>
+						<th class="cunid">Unidade</th>
+						<th class="cqtd">Quantidade</th>
 						<th class="ctotal">Total</th>
-						<th class="copcaoes">Opções</th>
+						<th class="copcaoes"></th>
 					</tr>
 					<tr>
-						<td class="ccodigo"><input class="ccodigo" type="text" name="codigo1"></td>
-						<td class="cproduto"><input class="cproduto" type="text" ></td>
-						<td class="cunid"><input type="text" class="cunid" readonly></td>
-						<td class="cqtd"><input class="cqtd" type="text" name="qtd1"></td>
-						<td class="ctotal"><input type="text" readonly></td>
-						<td><input type="button" value="  ...  "></td>
+						<td class="ccodigo"><input class="ccodigo inputTabela" type="text" name="codigo1" autofocus></td>
+						<td class="cproduto"><input class="cproduto inputTabela" type="text" ></td>
+						<td class="cunid"><input type="text" class="cunid inputTabela" readonly></td>
+						<td class="cqtd"><input class="cqtd inputTabela" type="text" class="qtd"></td>
+						<td class="ctotal"><input type="text" class="ctotal inputTabela" readonly></td>
+						<td><img src="../images/x.jpg"></td>
 					</tr>
 
-				</table> ##Ao preencher este, outro será gerado automáticamente!
+				</table>
 				<br />
 				<input type="hidden" name="logic" value="NovaCompraLogic">
 				<input type="submit" value="Confirma"> -

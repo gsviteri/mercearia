@@ -9,7 +9,7 @@
 <form action="Control" method="post">
 <div class="esquerda">
 <p class="form">Código de barras*:
- <input type="text" name="id"><br />
+ <input type="text" name="id" autofocus><br />
 Nome do produto*:
  <input type="text" name="nome"><br />
 Valor da unidade:
@@ -23,7 +23,7 @@ Validade mais próxima:
 Validade menos próxima:
   <input type="text" name="val_max"><br />
  *Preenchimento obrigatório<br>
- <input type="hidden" name="logic" value="NovoProdutoLogic">
+ <input type="hidden" name="logic" value="NovoProdutoLogic"></p>
  <input type="submit" value="Confirma"> <input type="button" value="Limpa">
  
 </form>
