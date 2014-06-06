@@ -6,6 +6,6 @@
 </head>
 <body class="body">
 <p id="404"><h2>A página solicitada não foi encontrada.</h2>
-<a href="/Mercearia/views/Menu.jsp">Voltar ao menu.</a></p>
+<a href="${pageContext.request.contextPath}/views/Menu.jsp">Voltar ao menu.</a></p>
 </body>
 </html>
