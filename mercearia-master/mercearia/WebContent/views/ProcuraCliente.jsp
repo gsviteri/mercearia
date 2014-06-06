@@ -7,12 +7,23 @@
 	<script src="../js/jquery.js"></script>
 	<script src="../js/scripts.js"></script>
 	<title>Gerencie um cliente</title>
+<script type="text/javascript">
+	
+	function tipoEvento(tipo, event) {
+		var t = document.getElementById("tipo");
+		t.value = tipo;
+		document.forms[0].submit();
+		event.stopPropagation();
+		event.preventDefault();
+		return false;
+	}
+</script>
 </head>
 <body>
 	<div class="container">
 	
 		<div class="metadeEsquerda"><p class="margemP"><h1>Gerencie um cliente</h1></p> 
-		
+		<form id="meuForm" action="BuscaCliente" method="POST">
 				Palavra Chave:
 				<input type="text" id="palavraChave" autofocus>
 				<select id="parametro">
@@ -22,12 +33,12 @@
 				</select>
 				<input type="button" value="Buscar" onclick="buscaDadosCliente()">	<br /><br />
 			<p class="margemM form">	
-				Nome: <input type="text" id="nome">	<br />
+				Nome: <input type="text" id="nome" name="nome">	<br />
 				<select id="doc">
 					<option value="cpf">CPF</option>
 					<option value="cnpj">CNPJ</option>
 				</select>
-				<input type="text" id="docNumero">	<br /> 
+				<input type="text" id="docNumero" name="docNumero">	<br /> 
 				Telefone: <input type="text" id="telefone">	<br />
 				Email: <input type="text" id="email">	<br /> 
 				Sexo:
@@ -36,12 +47,15 @@
 					<option value="feminino">Feminino</option>
 				</select>	<br />
 				Data de nascimento:
-				<input type="date" name="dataNascimento" max="2012-01-01" max="1910-01-01" class="data">	<br />
-				<input type="button" value="Editar" onclick="editaDados()"> - 
-				<input type="button" value="Excluir" id="btn" class="bVermelho">
+				<input type="text" name="dataNascimento" >	<br />
+				<input type="button" value="Editar"/> - 
+				<input type="button" value="Excluir" class="bVermelho" />
 				<input type="hidden" id="form" value="ProcuraClienteLogic">
+				<input type="hidden" id="tipo" name="tipo" />
 			</p>
+			</form>
 			<div id="fim">
+			
 			</div>
 		</div>
 		<div class="metadeDireita"> 

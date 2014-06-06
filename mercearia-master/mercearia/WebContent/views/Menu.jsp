@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>¨$%67¨%4657689-Menu principal</title>
+<title>Menu principal</title>
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/jquery-ui.js"></script>
@@ -69,7 +69,7 @@ a {
 		</div>
 		<img src="../images/Relatorio.jpg" alt="Relatorio" height="75" width="75" title="Relatório">
 		<div>
-			<p class="opcao"><a href="Relatorios.jsp" target="ctn">GERENCIAR</a></p>
+			<p class="opcao"><a href="exemploJSF.jsf" target="ctn">GERENCIAR</a></p>
 		</div>
 	<div class="content">
 		<iframe name="ctn" width="1200px" height="650px" frameBorder="0"></iframe>

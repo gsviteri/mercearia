@@ -30,7 +30,7 @@ public class NovaCompraLogic implements Logic {
 		Produto produto = new Produto();
 		do {
 			j = 0;
-			System.out.println(request.getParameter("codigo"+i));
+			System.out.println(request.getParameter("codigo"+i)+request.getParameter("qtd"+i));
 			produto = pdao.busca(Long.parseLong(request.getParameter("codigo"+i)));
 			total +=((produto.getValor()) * Integer.parseInt(request
 					.getParameter("qtd" + i)));

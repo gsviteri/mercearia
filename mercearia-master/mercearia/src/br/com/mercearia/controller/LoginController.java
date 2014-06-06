@@ -21,7 +21,6 @@ public class LoginController extends HttpServlet{
 		if (dao.checaLogin(usuario, senha)){
 			HttpSession session = request.getSession();
 			session.setAttribute("usuario", usuario);
-			System.out.println("Rolou :D");
 			response.sendRedirect("views/Menu.jsp");
 			return;
 		}

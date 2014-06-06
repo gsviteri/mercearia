@@ -144,7 +144,31 @@
 						<td class="ccodigo"><input class="ccodigo inputTabela" type="text" name="codigo1" autofocus></td>
 						<td class="cproduto"><input class="cproduto inputTabela" type="text" ></td>
 						<td class="cunid"><input type="text" class="cunid inputTabela" readonly></td>
-						<td class="cqtd"><input class="cqtd inputTabela" type="text" class="qtd"></td>
+						<td class="cqtd"><input class="cqtd inputTabela" type="text" class="qtd1" name="qtd1"></td>
+						<td class="ctotal"><input type="text" class="ctotal inputTabela" readonly></td>
+						<td><img src="../images/x.jpg"></td>
+					</tr>
+					<tr>
+						<td class="ccodigo"><input class="ccodigo inputTabela" type="text" name="codigo2" autofocus></td>
+						<td class="cproduto"><input class="cproduto inputTabela" type="text" ></td>
+						<td class="cunid"><input type="text" class="cunid inputTabela" readonly></td>
+						<td class="cqtd"><input class="cqtd inputTabela" type="text" class="qtd" name="qtd2"></td>
+						<td class="ctotal"><input type="text" class="ctotal inputTabela" readonly></td>
+						<td><img src="../images/x.jpg"></td>
+					</tr>
+					<tr>
+						<td class="ccodigo"><input class="ccodigo inputTabela" type="text" name="codigo3" autofocus></td>
+						<td class="cproduto"><input class="cproduto inputTabela" type="text" ></td>
+						<td class="cunid"><input type="text" class="cunid inputTabela" readonly></td>
+						<td class="cqtd"><input class="cqtd inputTabela" type="text" class="qtd" name="qtd3"></td>
+						<td class="ctotal"><input type="text" class="ctotal inputTabela" readonly></td>
+						<td><img src="../images/x.jpg"></td>
+					</tr>
+					<tr>
+						<td class="ccodigo"><input class="ccodigo inputTabela" type="text" name="codigo4" autofocus></td>
+						<td class="cproduto"><input class="cproduto inputTabela" type="text" ></td>
+						<td class="cunid"><input type="text" class="cunid inputTabela" readonly></td>
+						<td class="cqtd"><input class="cqtd inputTabela" type="text" class="qtd" name="qtd4"></td>
 						<td class="ctotal"><input type="text" class="ctotal inputTabela" readonly></td>
 						<td><img src="../images/x.jpg"></td>
 					</tr>

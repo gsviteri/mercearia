@@ -36,8 +36,7 @@ public class ControllerServlet extends HttpServlet {
 		} else {
 			request.getRequestDispatcher("/views/NovaCompra.jsp").forward(request,
 					response);
-			
-			
+		
 		}
 	}
 }

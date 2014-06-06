@@ -17,11 +17,9 @@
 <div class="titulo"><h1>Cadastro de um novo cliente:</h1></div>
 <div class="esquerda"><form name="myForm" action="Control" method="post">
 <p class="form">Nome*:
- <input required type="text" name="nome" id="nome" autofocus
- oninvalid="setCustomValidity('O nome do cliente é necessário.')"><br />
+ <input required type="text" name="nome" id="nome" autofocus><br />
 CPF:
- <input type="text" pattern="[0-9]{9}[A-Za-z0-9]{2}" name="doc"
- oninvalid="setCustomValidity('Insira o CPF, 11 digitos,somente números.')"><br />
+ <input type="text" pattern="[0-9]{9}[A-Za-z0-9]{2}" name="doc"><br />
 Telefone:
  <input type="text" name="telefone" min="8" max="14"><br />
 Sexo:
@@ -31,7 +29,7 @@ Sexo:
  	</select><br />
 Email: <input type="email" name="email">	<br />
 Data de nascimento:
- <input type="date" name="dataNascimento" max="2012-01-01" max="1910-01-01" class="data"><br />
+ <input type="text" name="dataNascimento"><br />
  <input type="hidden" name="logic" value="NovoClienteLogic">
 *Preenchimento obrigatório<br>
  <input type="submit" value="CONFIRMA" class="bVerde"> -

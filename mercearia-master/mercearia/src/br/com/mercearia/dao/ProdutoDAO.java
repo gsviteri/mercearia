@@ -55,8 +55,8 @@ public class ProdutoDAO {
 			PreparedStatement ps = connection.prepareStatement(sql);
 
 			ps.setLong(1, produto.getId());
-			ps.setFloat(2, produto.getValor());
-			ps.setString(3, produto.getNome());
+			ps.setFloat(3, produto.getValor());
+			ps.setString(2, produto.getNome());
 			try {
 				ps.setString(4, produto.getFabricante());
 			} catch (SQLException e) {

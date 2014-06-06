@@ -38,7 +38,7 @@ public class ClienteDAO {
 			throw new RuntimeException(e);
 		}
 	}
-
+	
 	public List<Cliente> busca(String palavraChave, String parametro) {
 		connection = new Conexao().getConnection();
 
@@ -51,13 +51,11 @@ public class ClienteDAO {
 			//ps.setString(1, parametro);
 			palavraChave= ("%"+palavraChave+"%");
 			ps.setString(1, palavraChave);//aqui o index eh 2...
-			System.out.println(sql);
 			ResultSet rs = ps.executeQuery();
 			List <Cliente> listaCliente = new ArrayList<Cliente>();
 			rs.next();
 			do{
 			Cliente cliente = new Cliente();
-			System.out.println("Parametro: "+ parametro + " - PC: "+palavraChave);
 			//cliente.setId(rs.getInt("id_cliente"));
 			cliente.setNome(rs.getString("nome"));
 			cliente.setDoc(rs.getLong("doc"));
@@ -67,7 +65,6 @@ public class ClienteDAO {
 			calendar.setTime(rs.getDate("dataNascimento"));
 			cliente.setDataNascimento(calendar);
 			cliente.setEmail(rs.getString("email"));
-			System.out.println("Parametro: "+ parametro + " - PC: "+palavraChave+" -  Resultado: "+ cliente.getNome());
 			listaCliente.add(cliente);
 			}
 			while(rs.next());

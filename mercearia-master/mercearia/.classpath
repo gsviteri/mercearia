@@ -12,5 +12,10 @@
 	<classpathentry exported="true" kind="lib" path="C:/Users/Vanderson/Workspace/apache-tomcat-7.0.52/lib/servlet-api.jar" sourcepath="C:/Program Files/Java/jdk1.7.0_45/src.zip"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/jstl-api-1.2.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.14.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javax.faces-2.2.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/primefaces-5.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/primefaces-5.0-sources.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jsf-api.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jsf-impl.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
